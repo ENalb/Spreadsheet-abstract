@@ -7,12 +7,12 @@
 Spreadsheet::Spreadsheet(int r, int c) : row{r}, column{c}
 {
 	for (int i = 0; i < r; ++i) {
-        std::map<int, Cell*> new_row;
-        for (int j = 0; j < c; ++j) {
-            new_row[j] = nullptr;
-        }
-        m_cells[i] = new_row;
-    }
+        	std::map<int, Cell*> new_row;
+        	for (int j = 0; j < c; ++j) {
+            		new_row[j] = nullptr;
+        	}
+        	m_cells[i] = new_row;
+    	}
 }
 
 int Spreadsheet::getRow()
