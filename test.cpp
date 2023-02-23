@@ -51,11 +51,6 @@ void Tester::testAddRow()
 {
 	Spreadsheet sp(2, 2);
 	int rows = sp.getRow();
-	// IntCell intcell(1, Color::red);
-	// DoubleCell doublecell(2.5, Color::blue);
-	// std::vector<Cell*> row1;
-	// row1.push_back(&intcell);
-	// row1.push_back(&doublecell);
 	sp.addRow(1);
 	int new_rows = sp.getRow();
 	if(new_rows == rows + 1)
@@ -88,19 +83,13 @@ void Tester::testAddColumn()
 {
 	Spreadsheet sp(3,3);
 	int cols = sp.getColumn();
-	// Date date(2001, 5, 24);
-	// StringCell str("x", Color::pink);
-	// DateCell dt(date, Color::purple);
-    // std::vector<Cell*> column1;
-    // column1.push_back(&str);
-    // column1.push_back(&dt);
 	sp.addColumn(2);
-    int new_cols = sp.getColumn();
-    if (new_cols == cols + 1) {
-        std::cout << "addColumn Test passed" << std::endl;
-    } else {
-        std::cout << "addColumn Test failed" << std::endl;
-    }
+    	int new_cols = sp.getColumn();
+    	if (new_cols == cols + 1) {
+        	std::cout << "addColumn Test passed" << std::endl;
+    	} else {
+        	std::cout << "addColumn Test failed" << std::endl;
+    	}
 }
 
 void Tester::testRemoveColumn()
@@ -110,10 +99,10 @@ void Tester::testRemoveColumn()
 	sp.removeColumn(2);
 	int new_cols = sp.getColumn();
 	if (new_cols == cols - 1) {
-        std::cout << "removeColumn Test passed" << std::endl;
-    } else {
-        std::cout << "removeColumn Test failed" << std::endl;
-    }
+        	std::cout << "removeColumn Test passed" << std::endl;
+    	} else {
+        	std::cout << "removeColumn Test failed" << std::endl;
+    	}
 }
 
 void Tester::testSwapRows()
@@ -125,25 +114,25 @@ void Tester::testSwapRows()
 	sp.swapRows(1, 2);
 	bool isSwapped = true;
 	for (int r = 0; r < row; r++) {
-        for (int c = 0; c < column; c++) {
-            if (oldSp.getCellAt(r,c) != sp.getCellAt(r,c)) {
-                isSwapped = false;
-                break;
-            }
-        }
-    }
-    for (int c = 0; c < column; c++) {
-        if (oldSp.getCellAt(1,c) != sp.getCellAt(2,c) || oldSp.getCellAt(2,c) != sp.getCellAt(1,c)) {
-            isSwapped = false;
-            break;
-        }
-    }
-    if (isSwapped) {
-        std::cout << "swapRows Test passed" << std::endl;
-    } 
-    else {
-        std::cout << "swapRows Test failed" << std::endl;
-    }
+        	for (int c = 0; c < column; c++) {
+            		if (oldSp.getCellAt(r,c) != sp.getCellAt(r,c)) {
+                		isSwapped = false;
+                		break;
+            		}
+        	}
+    	}
+    	for (int c = 0; c < column; c++) {
+        	if (oldSp.getCellAt(1,c) != sp.getCellAt(2,c) || oldSp.getCellAt(2,c) != sp.getCellAt(1,c)) {
+		    isSwapped = false;
+		    break;
+        	}
+    	}
+    	if (isSwapped) {
+		std::cout << "swapRows Test passed" << std::endl;
+    	} 
+    	else {
+		std::cout << "swapRows Test failed" << std::endl;
+    	}
 }
 
 void Tester::testSwapColumns()
@@ -155,23 +144,23 @@ void Tester::testSwapColumns()
 	sp.swapColumns(1, 2);
 	bool isSwapped = true;
 	for (int r = 0; r < row; r++) {
-        for (int c = 0; c < column; c++) {
-            if (oldSp.getCellAt(r,c) != sp.getCellAt(r,c)) {
-                isSwapped = false;
-                break;
-            }
-        }
-    }
-    for (int c = 0; c < column; c++) {
-        if (oldSp.getCellAt(c,1) != sp.getCellAt(c,2) || oldSp.getCellAt(c,2) != sp.getCellAt(c,1)) {
-            isSwapped = false;
-            break;
-        }
-    }
-    if (isSwapped) {
-        std::cout << "swapColumns Test passed" << std::endl;
-    } 
-    else {
-        std::cout << "swapColumns Test failed" << std::endl;
-    }
+        	for (int c = 0; c < column; c++) {
+            		if (oldSp.getCellAt(r,c) != sp.getCellAt(r,c)) {
+				isSwapped = false;
+				break;
+            		}
+        	}
+    	}
+    	for (int c = 0; c < column; c++) {
+        	if (oldSp.getCellAt(c,1) != sp.getCellAt(c,2) || oldSp.getCellAt(c,2) != sp.getCellAt(c,1)) {
+            		isSwapped = false;
+            		break;
+        	}
+    	}
+    	if (isSwapped) {
+        	std::cout << "swapColumns Test passed" << std::endl;
+    	} 
+    	else {
+        	std::cout << "swapColumns Test failed" << std::endl;
+    	}
 }
